@@ -13,7 +13,9 @@ std::ostream &operator<<(std::ostream &os, const Token &token)
         {Token::Type::BinarySlash, [&]() { os << "Binary /"; }},
         {Token::Type::BinaryStar, [&]() { os << "Binary *"; }},
         {Token::Type::UnaryMinus, [&]() { os << "Unary -"; }},
-        {Token::Type::UnaryPlus, [&]() { os << "Unary +"; }}
+        {Token::Type::UnaryPlus, [&]() { os << "Unary +"; }},
+        {Token::Type::LeftParenthesis, [&]() { os << "Parenthesis ("; }},
+        {Token::Type::RightParenthesis, [&]() { os << "Parenthesis )"; }}
     };
 
     if(!functions.contains(token.type)) throw std::runtime_error("Unrecognized token type");

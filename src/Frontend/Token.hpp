@@ -8,7 +8,8 @@ struct Token {
         Invalid,
         IntLiteral, DoubleLiteral,
         BinaryPlus, BinaryMinus, BinaryStar, BinarySlash,
-        UnaryPlus, UnaryMinus
+        UnaryPlus, UnaryMinus,
+        LeftParenthesis, RightParenthesis
     } type;
 
     std::variant<std::monostate, int, double> value;
