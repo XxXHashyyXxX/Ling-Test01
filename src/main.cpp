@@ -2,6 +2,7 @@
 #include <fstream>
 #include "Frontend/Token.hpp"
 #include "Frontend/Lexer.hpp"
+#include "Frontend/Parser.hpp"
 #include <string>
 
 int main() {
@@ -15,7 +16,9 @@ int main() {
         auto expression = line.substr(pos + 1);
 
         std::cout << "Test " << name << ": " << expression << std::endl;
-        for(auto& token : Lexer::tokenize(expression)) {
+        auto tokens = Lexer::tokenize(expression);
+        Parser::determineArityOfOperators(tokens);
+        for(auto& token : tokens) {
             std::cout << "\t" << token << std::endl;
         }
     }

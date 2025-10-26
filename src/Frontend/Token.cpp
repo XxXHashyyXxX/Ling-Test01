@@ -12,6 +12,10 @@ std::ostream &operator<<(std::ostream &os, const Token &token)
         {Token::Type::OperatorPlus, [&]() { os << "Operator +"; }},
         {Token::Type::OperatorSlash, [&]() { os << "Operator /"; }},
         {Token::Type::OperatorStar, [&]() { os << "Operator *"; }},
+        {Token::Type::BinaryMinus, [&]() { os << "Binary -"; }},
+        {Token::Type::BinaryPlus, [&]() { os << "Binary +"; }},
+        {Token::Type::UnaryMinus, [&]() { os << "Unary -"; }},
+        {Token::Type::UnaryPlus, [&]() { os << "Unary +"; }},
         {Token::Type::ParenthesisLeft, [&]() { os << "Parenthesis ("; }},
         {Token::Type::ParenthesisRight, [&]() { os << "Parenthesis )"; }}
     };

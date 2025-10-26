@@ -8,6 +8,8 @@ struct Token {
         Invalid,
         IntLiteral, DoubleLiteral,
         OperatorPlus, OperatorMinus, OperatorStar, OperatorSlash,
+        BinaryPlus, BinaryMinus,
+        UnaryPlus, UnaryMinus,
         ParenthesisLeft, ParenthesisRight
     } type;
 
