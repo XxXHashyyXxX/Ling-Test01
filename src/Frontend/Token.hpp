@@ -7,8 +7,7 @@ struct Token {
     enum class Type {
         Invalid,
         IntLiteral, DoubleLiteral,
-        BinaryPlus, BinaryMinus, BinaryStar, BinarySlash,
-        UnaryPlus, UnaryMinus,
+        OperatorPlus, OperatorMinus, OperatorStar, OperatorSlash,
         LeftParenthesis, RightParenthesis
     } type;
 

@@ -8,12 +8,10 @@ std::ostream &operator<<(std::ostream &os, const Token &token)
         {Token::Type::IntLiteral, [&]() { os << std::get<int>(token.value); }},
         {Token::Type::DoubleLiteral, [&]() { os << std::get<double>(token.value); }},
         {Token::Type::Invalid, [&]() { os << "Invalid token"; }},
-        {Token::Type::BinaryMinus, [&]() { os << "Binary -"; }},
-        {Token::Type::BinaryPlus, [&]() { os << "Binary +"; }},
-        {Token::Type::BinarySlash, [&]() { os << "Binary /"; }},
-        {Token::Type::BinaryStar, [&]() { os << "Binary *"; }},
-        {Token::Type::UnaryMinus, [&]() { os << "Unary -"; }},
-        {Token::Type::UnaryPlus, [&]() { os << "Unary +"; }},
+        {Token::Type::OperatorMinus, [&]() { os << "Operator -"; }},
+        {Token::Type::OperatorPlus, [&]() { os << "Operator +"; }},
+        {Token::Type::OperatorSlash, [&]() { os << "Operator /"; }},
+        {Token::Type::OperatorStar, [&]() { os << "Operator *"; }},
         {Token::Type::LeftParenthesis, [&]() { os << "Parenthesis ("; }},
         {Token::Type::RightParenthesis, [&]() { os << "Parenthesis )"; }}
     };
