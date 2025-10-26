@@ -34,8 +34,6 @@ Tokens Lexer::tokenize(const std::string_view &expression)
 
         if(*it == '+') {
             switch(outTokens.back().type) {
-                case Token::Type::DoubleLiteral:
-                case Token::Type::IntLiteral:
                 
             }
         }
