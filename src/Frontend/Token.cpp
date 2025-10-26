@@ -12,8 +12,8 @@ std::ostream &operator<<(std::ostream &os, const Token &token)
         {Token::Type::OperatorPlus, [&]() { os << "Operator +"; }},
         {Token::Type::OperatorSlash, [&]() { os << "Operator /"; }},
         {Token::Type::OperatorStar, [&]() { os << "Operator *"; }},
-        {Token::Type::LeftParenthesis, [&]() { os << "Parenthesis ("; }},
-        {Token::Type::RightParenthesis, [&]() { os << "Parenthesis )"; }}
+        {Token::Type::ParenthesisLeft, [&]() { os << "Parenthesis ("; }},
+        {Token::Type::ParenthesisRight, [&]() { os << "Parenthesis )"; }}
     };
 
     if(!functions.contains(token.type)) throw std::runtime_error("Unrecognized token type");

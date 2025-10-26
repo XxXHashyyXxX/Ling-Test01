@@ -11,11 +11,11 @@ Tokens Lexer::tokenize(const std::string_view &expression)
         if(std::isdigit(*it) || *it == '.') {
             auto start = it;
             bool isDouble = false;
-            while(std::isdigit(*it)) ++it;
+            while(it != expression.end() && std::isdigit(*it)) ++it;
             if(*it == '.') {
                 isDouble = true;
                 ++it;
-                while(std::isdigit(*it)) ++it;
+                while(it != expression.end() && std::isdigit(*it)) ++it;
             }
             auto end = it;
             auto valueString = std::string(start, end);
@@ -32,12 +32,17 @@ Tokens Lexer::tokenize(const std::string_view &expression)
             continue;
         }
 
-        if(*it == '+') {
-            switch(outTokens.back().type) {
-                
-            }
+        if(operators.contains(*it)) {
+            outTokens.push_back(Token(operators.at(*it)));
+            continue;
         }
+
+        while(it != expression.end() && !std::isspace(*it)) ++it;
+        outTokens.push_back(Token());
+
+        --it;
+        continue;
     }
 
-
+    return outTokens;
 }
